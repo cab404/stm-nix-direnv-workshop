@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "marus25.cortex-debug",
+        "matklad.rust-analyzer",
+        "cab404.vscode-direnv"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            /* Configuration for the Nucleus F0 board */
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Debug (OpenOCD)",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": "Cargo Build",
+            "runToMain": true,
+            "executable": "./target/thumbv6m-none-eabi/debug/stm32",
+            "device": "STM32F031",
+            "configFiles": [
+                "board/st_nucleo_f0.cfg"
+            ],
+        }
+    ]
+}
