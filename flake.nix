@@ -43,10 +43,10 @@
         with pkgs; mkShell {
           buildInputs = [
             pre-commit pkgconfig
+
             cargo-binutils
-            openocd telnet
-            llvmPackages.bintools
             gcc-arm-embedded
+            openocd telnet
 
             (fenixArch.combine [
               (rustToolchain.withComponents [
