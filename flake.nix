@@ -62,7 +62,7 @@
               openocd -f interface/stlink.cfg  -f board/st_nucleo_f0.cfg -c 'program "fw.bin" 0x08000000 reset; exit'
             '')
 
-          ];
+          ] ++ lib.optionals stdenv.isDarwin [ libiconv ];
 
           RUST_SRC_PATH = "${rustToolchain.rust-src}/lib/rustlib/src/rust/library/";
         };
