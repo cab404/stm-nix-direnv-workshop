@@ -57,9 +57,9 @@
             ])
 
             (writeScriptBin "build-upload" ''
-              set +e
-              cargo objcopy --bin stm32f103c8t6 --target thumbv7m-none-eabi --release -- -O binary stm32f103c8t6.bin;
-              openocd -f interface/stlink.cfg  -f board/st_nucleo_f0.cfg -c 'program  "stm32f103c8t6.bin" 0x08000000; exit'
+              set -e
+              cargo objcopy --bin stm32 --target thumbv6m-none-eabi --release -- -O binary fw.bin
+              openocd -f interface/stlink.cfg  -f board/st_nucleo_f0.cfg -c 'program "fw.bin" 0x08000000 reset; exit'
             '')
 
           ];
